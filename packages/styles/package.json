@@ -22,7 +22,7 @@
     "sassContent": "sass --no-source-map --style=compressed ./../core/src/sass/content.scss:dist/content.css",
     "sassLayout": "sass --no-source-map --style=compressed ./../core/src/sass/layout.scss:dist/layout.css",
     "copyPackages": "copyfiles --up 1 ./dist/* ../../dist/packages/styles",
-    "serve": "npm run compile && npm run copyServe",
+    "serve": "npm run sassCritical && npm run copyServe",
     "copyServe": "copyfiles --up 1 ./dist/* ../../dist/serve/www/assets/styles",
     "watch": "chokidar '../core/src/**/*.scss' -c 'npm run build'"
   },

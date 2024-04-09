@@ -10,8 +10,13 @@
     "lib"
   ],
   "scripts": {
-    "build": "copyfiles --up 1 ./lib/**/* ../../dist/packages/icons/",
-    "serve": "copyfiles --up 1 ./lib/**/* ../../dist/serve/www/assets/icons/"
+    "build": "npm run gov-icons && npm run bootstrap-icons && npm run bootstrap-license && npm run deploy-build",
+    "serve": "npm run gov-icons && npm run bootstrap-icons && npm run deploy-serve",
+    "deploy-build": "copyfiles --up 1 ./dist/**/* ../../dist/packages/icons/",
+    "deploy-serve": "copyfiles --up 1 ./dist/**/* ../../dist/serve/www/assets/icons/",
+    "gov-icons": "copyfiles --up 1 ./lib/**/* ./dist",
+    "bootstrap-license": "copyfiles --up 4 ../../node_modules/bootstrap-icons/LICENSE ./dist/bootstrap",
+    "bootstrap-icons": "copyfiles --up 5 ../../node_modules/bootstrap-icons/icons/* ./dist/bootstrap"
   },
   "devDependencies": {
     "copyfiles": "2.4.1"
@@ -19,5 +24,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "license": "EUPL v1.2 Licensed"
+  "license": "EUPL v1.2 Licensed",
+  "dependencies": {
+    "bootstrap-icons": "^1.11.3"
+  }
 }

@@ -4,6 +4,7 @@ enum Types {
 	BASIC = 'basic',
 	COMPLEX = 'complex',
 	COLORED = 'colored',
+	BOOTSTRAP = 'bootstrap'
 }
 export type Type = `${ValueOf<typeof Types>}`
 
