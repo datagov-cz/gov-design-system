@@ -33,6 +33,10 @@ gov-accordion:not(.hydrated) {
 				display: inline-block;
 			}
 		}
+
+		&>div {
+			display: none;
+		}
 	}
 
 	&[no-border] {
