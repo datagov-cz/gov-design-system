@@ -1,3 +1,21 @@
+gov-nav-dropdown.active .gov-nav-item__link {
+  &::before {
+    height: rem-calc(6);
+    width: 100%;
+  }
+}
+
+@include mq($until: md) {
+  gov-nav-dropdown.active .gov-nav-item__link {
+    border-left: rem-calc(4) white solid;
+  }
+}
+
+gov-nav gov-nav-dropdown.open .dropdown li.active {
+  border-left-width: 0.25rem;
+  border-left-color: white;
+}
+
 gov-nav gov-nav-dropdown {
   cursor: pointer;
   // Relative position we can position child the drop down.
@@ -16,6 +34,7 @@ gov-nav gov-nav-dropdown.open .dropdown {
     padding-left: 0;
     list-style-type: none;
     margin: 0.2rem 0;
+
     & li {
       text-align: left;
       padding: 0.75rem 0.5rem;
@@ -36,13 +55,13 @@ gov-nav gov-nav-dropdown.open .dropdown {
   }
 }
 
-@media (max-width: 47.99em) {
+@include mq($until: md) {
   gov-nav gov-nav-dropdown.open .dropdown {
     width: 100%;
   }
 }
 
-@media (min-width: 47.99em) {
+@include mq($from: md) {
   gov-nav gov-nav-dropdown.open .dropdown {
     position: absolute;
     width: max-content;

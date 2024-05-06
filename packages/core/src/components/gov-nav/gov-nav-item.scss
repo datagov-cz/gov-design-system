@@ -4,8 +4,22 @@
 
 $class: ".gov-nav-item";
 
+#{$class}.active #{$class}__link {
+	&::before {
+		height: rem-calc(6);
+		width: 100%;
+	}
+}
+
+@include mq($until: md) {
+  #{$class}.active {
+		border-left: rem-calc(4) white solid;
+  }
+}
+
 #{$class} {
 	display: block;
+
 	&__link {
 		@include focus-outline();
 		position: relative;
@@ -13,9 +27,11 @@ $class: ".gov-nav-item";
 		padding: rem-calc(15 48 15 36);
 		color: $nav-color;
 		text-decoration: none;
+
 		&:focus {
 			outline-color: $nav-color;
 		}
+
 		@include hover() {
 			color: $nav-color;
 			text-decoration: underline;
@@ -30,6 +46,7 @@ $class: ".gov-nav-item";
 			align-items: center;
 			height: 100%;
 			padding: rem-calc(22 20 21);
+
 			&::before {
 				@include pseudo();
 				top: 0;
@@ -40,8 +57,10 @@ $class: ".gov-nav-item";
 				transform: translate(-50%);
 				transition: width $t;
 			}
+
 			@include hover() {
 				text-decoration: none;
+
 				&::before {
 					width: 100%;
 				}
