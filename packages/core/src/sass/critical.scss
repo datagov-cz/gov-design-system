@@ -25,6 +25,7 @@
 @import "../components/gov-infobar/gov-infobar-critical";
 @import "../components/gov-layout/gov-layout-critical";
 @import "../components/gov-message/gov-message-critical";
+@import "../components/gov-modal/gov-modal-critical.scss";
 @import "../components/gov-nav/gov-nav-critical";
 @import "../components/gov-side-nav/gov-side-nav-critical";
 @import "../components/gov-spacer/gov-spacer-critical";
@@ -48,7 +49,6 @@ gov-cookiebar,
 gov-form-message,
 gov-form-password-power,
 gov-loading,
-gov-modal,
 gov-pagination,
 gov-prompt,
 gov-skeleton,
