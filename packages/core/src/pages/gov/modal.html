@@ -60,6 +60,14 @@
 		</p>
 		<gov-button slot="footer" variant="primary" wcag-label="Vyplnit formulář o výši dávky">Vyplnit formulář</gov-button>
 	</gov-modal>
+
+	<script>
+		window.addEventListener("load", () => {
+			document.getElementById("btn").addEventListener("gov-click", () => {
+				document.getElementById("modal").setAttribute("open", "true");
+			});
+		});
+	</script>
 </body>
 
 </html>
