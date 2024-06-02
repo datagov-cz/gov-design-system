@@ -47,11 +47,16 @@
 		<gov-nav-item href="#">
 			Služby veřejná správy
 		</gov-nav-item>
-		<gov-nav-item href="#">
-			Životní události
-		</gov-nav-item>
+		<gov-nav-dropdown>
+			<span slot="label">Životní události</span>
+			<ul slot="dropdown">
+				<li>
+					<a href="#">Chci pou6žít Design systém</a>
+				</li>
+			</ul>
+		</gov-nav-dropdown>
 		<gov-nav-dropdown class="active">
-			<span slot="label">O živote v ČR</span>
+			<span slot="label">O životě v ČR</span>
 			<ul slot="dropdown">
 				<li>
 					<a href="#">Pro zájemce o otevírání dat</a>
