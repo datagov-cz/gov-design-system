@@ -61,6 +61,10 @@ gov-tooltip {
 	}
 }
 
+gov-tooltip:not(.hydrated) gov-tooltip-content {
+  display: none;
+}
+
 // Layout section
 
 .p-0 {
