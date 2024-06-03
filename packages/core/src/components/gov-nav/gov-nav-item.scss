@@ -6,7 +6,7 @@ $class: ".gov-nav-item";
 
 #{$class}.active #{$class}__link {
 	&::before {
-		height: rem-calc(6);
+		height: rem-calc(2);
 		width: 100%;
 	}
 }
@@ -55,7 +55,7 @@ $class: ".gov-nav-item";
 				height: rem-calc(2);
 				background: $nav-color;
 				transform: translate(-50%);
-				transition: width $t;
+				transition: width .25s ease-in-out;
 			}
 
 			@include hover() {

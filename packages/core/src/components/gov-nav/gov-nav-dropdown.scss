@@ -1,6 +1,6 @@
 gov-nav-dropdown.active .gov-nav-item__link {
   &::before {
-    height: rem-calc(6);
+    height: rem-calc(2);
     width: 100%;
   }
 }
@@ -12,13 +12,13 @@ gov-nav-dropdown.active .gov-nav-item__link {
 }
 
 gov-nav gov-nav-dropdown.open .dropdown li.active {
-  border-left-width: 0.25rem;
+  border-left-width: rem-calc(2);
   border-left-color: white;
 }
 
 gov-nav gov-nav-dropdown {
   cursor: pointer;
-  // Relative position we can position child the drop down.
+  //  Relative position we can position child the drop down.
   position: relative;
 }
 
@@ -37,17 +37,19 @@ gov-nav gov-nav-dropdown.open .dropdown {
 
     & li {
       text-align: left;
-      padding: 0.75rem 0.5rem;
       margin: 0 0.5rem;
       border-left: 0.175rem solid var(--gov-nav-bg, var(--gov-color-primary));
 
       & a {
         text-decoration: none;
         color: var(--gov-nav-color, var(--gov-color-neutral-white));
+        // We show content as a block so we can set padding.
+        display: block;
+        padding: 0.75rem 0.5rem;
       }
 
       &:hover {
-        transition: border 400ms ease-out;
+        transition: border .25s ease-in-out;
         border-left-color: white;
       }
 
