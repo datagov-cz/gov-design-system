@@ -42,7 +42,7 @@ jobs:
       - name: Build and Push
         uses: docker/build-push-action@v7
         with:
-          context: ./gateway/
+          context: ./
           push: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
