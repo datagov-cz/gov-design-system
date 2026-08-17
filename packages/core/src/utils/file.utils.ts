@@ -12,14 +12,23 @@ export function formatBytes(bytes: any): string {
 
 export function fileAcceptValidation(file: File, accept: string): boolean {
 	if (typeof accept === 'string' && accept.length) {
-		return (
-			accept
-				.replace(/\s/g, '')
-				.split(',')
-				.filter(accept => {
-					return new RegExp(accept.replace('*', '.*')).test(file.type)
-				}).length > 0
-		)
+		const fileName = file.name.toLowerCase()
+		const fileType = file.type.toLowerCase()
+
+		return accept
+			.replace(/\s/g, '')
+			.toLowerCase()
+			.split(',')
+			.filter(token => token.length)
+			.some(token => {
+				if (token.startsWith('.')) {
+					return fileName.endsWith(token)
+				}
+				if (token.endsWith('/*')) {
+					return fileType.startsWith(token.slice(0, -1))
+				}
+				return fileType === token
+			})
 	} else {
 		return true
 	}

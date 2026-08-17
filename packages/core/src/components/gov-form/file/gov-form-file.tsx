@@ -138,7 +138,6 @@ export class GovFormFile {
 		this.f.passAttrToControl("type", "File")
 	}
 
-
 	private registerListeners() {
 		function highlight() {
 			this.areaRef.classList.add("highlight")
@@ -184,8 +183,20 @@ export class GovFormFile {
 	}
 
 	private validateFiles(files: FileList) {
+		const incomingFiles = this.multiple ? Array.from(files) : Array.from(files).slice(0, 1)
 		let filesBuffer: GovFormFileItem[] = []
-		Array.from(files).map(file => {
+
+		if (!this.multiple && this.displayAttachments && this.files.length && incomingFiles.length) {
+			this.files.forEach(removedFile => {
+				this.govRemoveFile.emit({
+					component: FormFileClass.root,
+					file: removedFile,
+				})
+			})
+			this.files = []
+		}
+
+		incomingFiles.map(file => {
 			const isFile = this.files.find(item => item.file.name === file.name && item.file.size === file.size) || null
 			if (isFile === null) {
 				const isSizeValid = typeof this.maxFileSize === "number" && this.maxFileSize > 0 ? fileSizeValidation(file, this.maxFileSize) : true
