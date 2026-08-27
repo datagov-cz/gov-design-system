@@ -1,0 +1,24 @@
+{
+  "name": "gov-design-system",
+  "license": "ISC",
+  "version": "4.7.0",
+  "type": "module",
+  "scripts": {
+    "build": "npm run copy:components && npm run copy:icons && npm run copy:fonts && npm run copy:styles",
+    "copy:components": "copyfiles --flat node_modules/@gov-design-system-ce/components/dist/core/* ./dist/assets/components/core",
+    "copy:icons": "copyfiles --flat ./node_modules/@gov-design-system-ce/icons/lib/components/* ./dist/assets/icons/components && copyfiles --flat ./node_modules/@gov-design-system-ce/icons/lib/complex/* ./dist/assets/icons/complex",
+    "copy:fonts": "copyfiles --flat ./node_modules/@gov-design-system-ce/fonts/lib/* ./dist/assets/fonts",
+    "copy:styles": "copyfiles --flat ./node_modules/@gov-design-system-ce/styles/lib/* ./dist/assets/styles",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@gov-design-system-ce/components": "^4.7.0",
+    "@gov-design-system-ce/fonts": "^4.7.0",
+    "@gov-design-system-ce/icons": "^4.7.0",
+    "@gov-design-system-ce/styles": "^4.7.0"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "express": "^5.2.1"
+  }
+}

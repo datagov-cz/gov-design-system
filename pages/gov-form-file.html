@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="utf-8">
+  <title>gov-form-file</title>
+  <!-- Design system section. -->
+  <script> window.GOV_DS_CONFIG = { iconsPath: "./assets/icons" }; </script>
+  <!-- The order of import matters! -->
+  <link rel="stylesheet" href="../assets/styles/tokens.css" />
+  <link rel="stylesheet" href="../assets/styles/styles.css" />
+  <link rel="stylesheet" href="../assets/styles/layout.css" />
+  <link rel="stylesheet" href="../assets/styles/components.css" />
+  <link rel="stylesheet" href="../assets/styles/animations.css" />
+  <link rel="stylesheet" href="../assets/styles/content.css" />
+  <link rel="stylesheet" href="../assets/styles/templates.css" />
+  <script type="module" src="../assets/components/core/core.esm.js"></script>
+</head>
+
+<body>
+  <gov-container>
+    <form method="POST" action="#" enctype="multipart/form-data">
+      <gov-form-control>
+        <gov-form-group>
+          <gov-form-file accept=".txt,.jsonld" expanded="true" name="files">
+            <span>Přetáhněte soubor nebo</span>
+            <p><gov-button color="primary" size="m" type="outlined">Nahrát ze zařízení</gov-button></p>
+            <span class="gov-form-file__note">Podporované formáty ...</span>
+          </gov-form-file>
+        </gov-form-group>
+      </gov-form-control>
+      <br/>
+      <gov-button color="primary" type="solid" size="m" native-type="submit">
+        Vložit záznam
+      </gov-button>
+    </form>
+  </gov-container>
+</body>
+
+</html>

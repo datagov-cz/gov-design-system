@@ -1,0 +1,8 @@
+# General
+.*
+
+# Dependencies
+node_modules
+
+# Build
+dist
