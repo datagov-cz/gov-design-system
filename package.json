@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run copy:components && npm run copy:icons && npm run copy:fonts && npm run copy:styles",
     "copy:components": "copyfiles --flat node_modules/@gov-design-system-ce/components/dist/core/* ./dist/assets/components/core",
-    "copy:icons": "copyfiles --flat ./node_modules/@gov-design-system-ce/icons/lib/components/* ./dist/assets/icons/components && copyfiles --flat ./node_modules/@gov-design-system-ce/icons/lib/complex/* ./dist/assets/icons/complex",
+    "copy:icons": "copyfiles --flat ./node_modules/@gov-design-system-ce/icons/lib/components/* ./dist/assets/icons/components && copyfiles --flat ./node_modules/@gov-design-system-ce/icons/lib/complex/* ./dist/assets/icons/complex && copyfiles --flat ./node_modules/@gov-design-system-ce/icons/lib/colored/* ./dist/assets/icons/colored",
     "copy:fonts": "copyfiles --flat ./node_modules/@gov-design-system-ce/fonts/lib/* ./dist/assets/fonts",
     "copy:styles": "copyfiles --flat ./node_modules/@gov-design-system-ce/styles/lib/* ./dist/assets/styles",
     "start": "node server.js"
