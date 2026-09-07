@@ -1,3 +1,7 @@
+/**
+ * This should be used only as a local dev-server to test the content.
+ * Do NOT use this in production, use the full Docker image instead.
+ */
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -6,19 +10,8 @@ import express from "express";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
-const port = process.env.PORT || 8080;
-
-/* Support CORS. */
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "*");
-  if (req.method === "OPTIONS") {
-    res.status(204).end();
-    return;
-  }
-  next();
-});
+// Port for the dev server; override with the PORT env variable.
+const port = process.env.NGINX_PORT || 8080;
 
 // Order matters: patch overrides html, html overrides dist,
 // mirroring the layering done by COPY order in the Dockerfile.

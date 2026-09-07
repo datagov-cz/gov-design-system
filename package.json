@@ -15,9 +15,7 @@
     "@gov-design-system-ce/components": "^4.7.0",
     "@gov-design-system-ce/fonts": "^4.7.0",
     "@gov-design-system-ce/icons": "^4.7.0",
-    "@gov-design-system-ce/styles": "^4.7.0"
-  },
-  "devDependencies": {
+    "@gov-design-system-ce/styles": "^4.7.0",
     "copyfiles": "^2.4.1",
     "express": "^5.2.1"
   }
