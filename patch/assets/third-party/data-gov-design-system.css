@@ -1,0 +1,12 @@
+
+/**
+ * Fix missing .gov-filter-tag present only in story book.
+ */
+.gov-filter-tag {
+  display: flex;
+  gap: var(--spacing-2xs);
+  align-items: center;
+  padding-left: var(--spacing-s-nudge);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--corner-radius-s);
+}
